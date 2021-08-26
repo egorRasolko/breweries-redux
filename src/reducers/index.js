@@ -22,6 +22,16 @@ function saveData(state, value) {
 }
 
 function clearSearch(state) {
+    fetch("https://api.openbrewerydb.org/breweries/")
+    .then(res => res.json())
+      .then(
+        (result) => {
+          store.dispatch({type: SAVE_DATA, payload: result});
+        },
+
+        (error) => {
+            store.dispatch({type: SET_ERROR, payload: error})
+        });
     return {...state, useSearch: false}
 }
 
