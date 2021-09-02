@@ -45,13 +45,11 @@
   margin: 5px auto;
   width: 40%;
 }
-.fakeMap{
-  /*margin: 5px 75% 5px 5px;*/
+.noMap{
   border: 1px solid black;
-  display: inline;
   width: 20%;
   height: 60px;
-  
+  display: inline;
 }
 .contentAlign {
   display: inline;
@@ -65,11 +63,11 @@
 }
 .website{
   position: relative;
-  left: 27%;
+  left:45%;
 }
 .lastupd{
   position: relative;
-  left: 27%;
+  left: 45%;
   margin: 3% 0;
   color: gray;
 
