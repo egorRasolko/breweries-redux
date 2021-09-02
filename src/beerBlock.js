@@ -27,7 +27,13 @@ class BeerBlock extends React.Component {
         return (
             <div className='framegent'>
                 <h3 className='titleh3'>{this.props.name}</h3>
-                <div className='fakeMap'>MAP IS NOT AVAILABLE</div>
+                <div className='fakeMap'>
+                {this.props.latitude ? <YMaps>
+                    <Map defaultState={{ center: [this.props.latitude, this.props.longitude], zoom: 9,  width:240, height:120 }}>
+                        <Placemark defaultGeometry={[this.props.latitude, this.props.longitude]} />
+                    </Map>
+                    </YMaps> : <p className='noMap'> MAP IS NOT AVALIABLE </p>}
+                </div>
                 <div className='contentAlign'>
                     { this.props.website_url ? 
                         <a className='website' href={this.props.website_url} target='_blank' rel='noreferrer'>{this.props.website_url}</a> 
