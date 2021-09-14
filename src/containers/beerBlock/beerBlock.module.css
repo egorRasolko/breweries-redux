@@ -1,0 +1,29 @@
+.framegent{
+    border: 1px solid gray;
+    margin: 5px auto;
+    width: 40%;
+  }
+  
+  .noMap{
+    border: 1px solid black;
+    width: 20%;
+    height: 60px;
+    display: inline;
+  }
+  .titleh3{
+    color: black; 
+    font-size: 27px;
+    font-weight: 700;
+    text-align: center;
+  }
+  .website{
+    position: relative;
+    left: 45%;
+  }
+  .lastupd{
+    position: relative;
+    left: 45%;
+    margin: 3% 0;
+    color: gray;
+  
+  }
