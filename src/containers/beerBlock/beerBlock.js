@@ -12,6 +12,7 @@ function yearsDiff(dt) {
 class BeerBlock extends React.Component {
    
     render() {
+        console.log(this.props);
         return (
             <div className={classes.framegent}>
                 <h3 className={classes.titleh3}>{this.props.name}</h3>

@@ -2,7 +2,7 @@ import React from 'react'
 import { bindActionCreators } from 'redux';
 import classes from './Header.module.css';
 import { connect } from 'react-redux'
-import {searchData, clearSearch} from './Actions/pageAction.js';
+import {searchData, clearSearch} from '../../Actions/pageAction.js';
 
 class Header extends React.Component{
 constructor(props){
@@ -31,7 +31,7 @@ render() {
         AWESOME breweries
       </h1>
        <div>
-       <input type='text' className={classes.input_text} ></input>
+       <input type='text' className={'input_text'} ></input>
        <button onClick={this.searchItems}>Search</button>
        <button onClick={this.clearSearchClick}>Clear search</button>
        </div>

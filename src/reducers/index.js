@@ -14,6 +14,7 @@ function loadData(state) {
         (error) => {
             store.dispatch({type: SET_ERROR, payload: error})
         });
+        console.log(state)
     return state;
 }
 
