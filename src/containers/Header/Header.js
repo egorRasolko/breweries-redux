@@ -13,7 +13,7 @@ constructor(props){
 
  
 searchItems(){
-  let inputValue = document.querySelector('.input-text').value;
+  let inputValue = document.querySelector('.input_text').value;
   console.log(`searching <${inputValue}>`)
   this.props.searchData(inputValue)
 }
