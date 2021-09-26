@@ -2,12 +2,26 @@ import React from'react'
 import classes from './beerBlock.module.css';
 import { YMaps, Map, Placemark } from 'react-yandex-maps';
 
-function yearsDiff(dt) { 
-    let tmp = new Date(dt)
-    let DifMs = Date.now() - tmp;
-    let deltaDt = new Date(DifMs); // miliseconds from epoch
-    return Math.abs(deltaDt.getUTCFullYear() - 1970);
-  }
+const getDate = (date) =>{
+    const currentDay = Date.parse( new Date() );
+    const days = Math.round(currentDay - Date.parse(new Date(date))) / 86400000;
+    if (days > 30){
+        if (days >60){
+            if (days > 365){
+                if (days > 730){
+                    return Math.round(days/365) + ' years ago'
+                }
+                return 'one year ago'
+            }
+            return Math.round(days/30) + ' month ago'
+        }
+        return  'one month ago'
+    }
+    if (days > 1){
+        return Math.round(days) + ' days ago'
+    }
+    return 'one day ago'
+};
 
 class BeerBlock extends React.Component {
    
@@ -29,7 +43,7 @@ class BeerBlock extends React.Component {
                     :
                         <p className={classes.website}>No link</p>
                     }
-                    <p className={classes.lastupd}>Last update:{ yearsDiff(this.props.updated_at) } years ago</p>
+                    <p className={classes.lastupd}>Last update:{ getDate(this.props.updated_at) } years ago</p>
                 </div>
             </div>                        
         )
